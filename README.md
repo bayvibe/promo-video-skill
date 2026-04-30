@@ -1,26 +1,26 @@
-# Promo Video Skill for Claude Code
+# Promo Video Skill
 
-一个 Claude Code 技能，输入一个网站 URL，自动提取品牌信息并生成宣传视频。
+输入一个网站 URL，自动提取品牌信息并生成 1920×1080 宣传视频。
+
+## 支持平台
+
+| 平台 | 安装方式 |
+|------|----------|
+| Claude Code | `/skill-install https://github.com/bayvibe/promo-video-skill` |
+| Cursor | 放到 `.cursor/rules/` 目录下即可 |
+| Codex / OpenClaw / Hermes | 读取 `AGENTS.md` 自动生效 |
 
 ## 这是什么？
 
-这是给 [Claude Code](https://claude.ai/code) 使用的技能（Skill）。你只需要给它一个网站链接，它会：
+一个跨 AI 工具的技能配置。你只需要给它一个网站链接，它会：
 
 1. 自动抓取网站的品牌名、描述、主色调
 2. 生成视频脚本供你确认
-3. 使用 [Remotion](https://remotion.dev) 渲染出 1920×1080 的宣传视频
-
-## 安装
-
-在 Claude Code 中运行：
-
-```
-/skill-install https://github.com/bayvibe/promo-video-skill
-```
+3. 使用 [Remotion](https://remotion.dev) 渲染出宣传视频
 
 ## 使用
 
-在 Claude Code 对话框中直接说：
+在 AI 对话框中直接说：
 
 > 帮我用 https://example.com 生成一个宣传视频
 
