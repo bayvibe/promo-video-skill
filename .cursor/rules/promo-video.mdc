@@ -1,0 +1,81 @@
+---
+description: Generate a promotional video from a website URL using Remotion
+globs: src/scenes/**,src/data/**,SKILL.md,generate_promo.py
+alwaysApply: false
+---
+
+# Promo Video Skill (Remotion)
+
+Generate a promotional video from a website URL or user-provided brand information.
+
+## Two Paths
+
+### Path A: User provided a website URL
+
+When the user gives you a URL:
+
+1. Run `python generate_promo.py --source <url>` to generate `src/data/brand.json` and `src/data/script.json`
+2. **Immediately show the user the generated script** — present a clean summary:
+   ```
+   品牌名: xxx
+   Tagline: xxx
+   主色调: #xxx
+   场景规划:
+     1. Intro (3s) — 品牌Logo + 名称 + tagline
+     2. Feature (5s) — 功能1 / 功能2 / 功能3
+     3. Dashboard (4s) — 产品界面展示
+     4. CTA (3s) — "xxx" + 按钮
+   ```
+3. Ask: "确认这个脚本，还是需要调整？"
+4. After confirmation, run `npm run dev` and tell user to preview at `http://localhost:3000`
+
+### Path B: User provided nothing
+
+When the user just says "generate a video" / "make a promo" without specifics, ask the following questions (one message, all at once):
+
+1. **品牌名是什么？**
+2. **一句话描述你的产品**（用作 tagline）
+3. **有品牌色吗？**
+4. **想突出哪几个卖点？**（最多3个）
+5. **有网站 URL 吗？**
+
+## Core Commands
+
+- `python generate_promo.py --source <url>` — Scrape brand data from URL
+- `npm run dev` — Start Remotion Studio
+- `npx remotion render PromoVideo out/promo.mp4` — Export final video
+- `npm run lint` — Lint check
+
+## Design Rules
+
+- Fill the 1920×1080 canvas, minimize whitespace
+- Use at least 3 distinctly different compositions per video
+- All cards/panels/mockups must share the same `CARD_RADIUS` token
+- Brand color MUST come from CTA button inline styles, not random CSS
+- Global subtitle bar: center-bottom, pill-shaped semi-transparent bg, 32px, padding 18px 48px, spring animation
+- End card must use a different layout style from preceding scenes (centered lockup, poster style, or full-screen typographic close)
+- Keep 64px safe zone from edges for critical text
+
+## Data Extraction Rules
+
+- Brand name: prefer `og:site_name`, fallback to title tag first segment
+- Tagline: prefer `og:description`, truncate to 80 chars
+- Brand color: extract from button/CTA element inline gradient colors
+- Features: filter titles < 45 chars, pick exactly 3
+- Auto-detect light/dark theme for bg/text colors
+
+## Validation Checklist
+
+Before showing to user:
+- Brand name is clean (not raw HTML title)
+- Tagline < 80 chars
+- Color from CTA button
+- Exactly 3 features with concise titles
+- Text is readable at 1920×1080
+
+## Visual QA (must run before delivery)
+
+1. `npm run lint`
+2. `npx remotion compositions src/index.ts` to verify composition exists and duration is correct
+3. Export at least one still per scene for layout check
+4. Verify: no critical text/buttons clipped, no unintentional overflow, subtitles centered, CARD_RADIUS consistent, ≥3 different layouts, 64px safe zone, no long text overflow
