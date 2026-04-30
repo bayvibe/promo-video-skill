@@ -1,0 +1,25 @@
+{
+  "name": "YouWare",
+  "tagline": "Build, deploy, and share live products instantly with AI vibe coding.",
+  "colors": {
+    "primary": "#3e4e33",
+    "secondary": "#687058",
+    "background": "#FFFFFF",
+    "surface": "#F8FAFC",
+    "text": "#0F172A",
+    "textSecondary": "#64748B",
+    "accent": "#3e4e33"
+  },
+  "font": "Inter, SF Pro Text, Helvetica, Arial, sans-serif",
+  "logoUrl": "https://www.youware.com/favicon.ico",
+  "features": [
+    { "title": "AI Website Builder", "description": "Describe the site you want. Instantly generates a fully responsive, SEO-ready landing page." },
+    { "title": "AI Dashboard Generator", "description": "Tell your KPIs and layout. Builds a complete dashboard with charts and structure." },
+    { "title": "One-Click Deploy", "description": "Go live with a single click. No setup, no config, just ship." }
+  ],
+  "cta": {
+    "headline": "Ready to vibe code?",
+    "buttonText": "Get Started Free",
+    "url": "https://www.youware.com/"
+  }
+}

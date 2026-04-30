@@ -1,0 +1,15 @@
+{
+  "fps": 30,
+  "width": 1920,
+  "height": 1080,
+  "scenes": [
+    { "id": "intro", "duration": 90, "headline": "YouWare", "subtext": "Build, deploy, and share live products instantly with AI vibe coding.", "subtitle": "AI-powered vibe coding platform" },
+    { "id": "feature", "duration": 150, "headline": "", "subtitle": "From idea to live product in minutes", "items": [
+      { "title": "AI Website Builder", "description": "Describe the site you want. Instantly generates a fully responsive, SEO-ready landing page." },
+      { "title": "AI Dashboard Generator", "description": "Tell your KPIs and layout. Builds a complete dashboard with charts and structure." },
+      { "title": "One-Click Deploy", "description": "Go live with a single click. No setup, no config, just ship." }
+    ]},
+    { "id": "dashboard", "duration": 120, "headline": "", "subtitle": "Real-time analytics at your fingertips" },
+    { "id": "cta", "duration": 90, "headline": "Ready to vibe code?", "buttonText": "Get Started Free", "subtitle": "Start building for free today" }
+  ]
+}
