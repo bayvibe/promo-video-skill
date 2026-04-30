@@ -15,7 +15,7 @@
 在 Claude Code 中运行：
 
 ```
-/skill-install https://github.com/baymini1993-dev/promo-video-skill
+/skill-install https://github.com/bayvibe/promo-video-skill
 ```
 
 ## 使用
