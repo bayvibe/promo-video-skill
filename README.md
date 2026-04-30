@@ -1,54 +1,59 @@
-# Remotion video
+# Promo Video Skill for Claude Code
 
-<p align="center">
-  <a href="https://github.com/remotion-dev/logo">
-    <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://github.com/remotion-dev/logo/raw/main/animated-logo-banner-dark.apng">
-      <img alt="Animated Remotion Logo" src="https://github.com/remotion-dev/logo/raw/main/animated-logo-banner-light.gif">
-    </picture>
-  </a>
-</p>
+一个 Claude Code 技能，输入一个网站 URL，自动提取品牌信息并生成宣传视频。
 
-Welcome to your Remotion project!
+## 这是什么？
 
-## Commands
+这是给 [Claude Code](https://claude.ai/code) 使用的技能（Skill）。你只需要给它一个网站链接，它会：
 
-**Install Dependencies**
+1. 自动抓取网站的品牌名、描述、主色调
+2. 生成视频脚本供你确认
+3. 使用 [Remotion](https://remotion.dev) 渲染出 1920×1080 的宣传视频
 
-```console
+## 安装
+
+在 Claude Code 中运行：
+
+```
+/skill-install https://github.com/baymini1993-dev/promo-video-skill
+```
+
+## 使用
+
+在 Claude Code 对话框中直接说：
+
+> 帮我用 https://example.com 生成一个宣传视频
+
+或者直接说"生成宣传视频"，技能会一步步引导你提供品牌信息。
+
+## 本地开发
+
+```bash
+# 安装依赖
 npm install
-```
 
-**Start Preview**
-
-```console
+# 启动 Remotion Studio 预览
 npm run dev
+
+# 导出视频
+npx remotion render PromoVideo out/promo.mp4
 ```
 
-**Render video**
+## 视频结构
 
-```console
-npx remotion render
-```
+每条视频包含 4 个场景：
 
-**Upgrade Remotion**
+- **Intro** — 品牌 Logo + 名称 + 标语
+- **Feature** — 3 个核心卖点展示
+- **Dashboard** — 产品界面模拟
+- **CTA** — 行动号召 + 按钮
 
-```console
-npx remotion upgrade
-```
+## 技术栈
 
-## Docs
-
-Get started with Remotion by reading the [fundamentals page](https://www.remotion.dev/docs/the-fundamentals).
-
-## Help
-
-We provide help on our [Discord server](https://discord.gg/6VzzNDwUwV).
-
-## Issues
-
-Found an issue with Remotion? [File an issue here](https://github.com/remotion-dev/remotion/issues/new).
+- [Remotion](https://remotion.dev) — React 视频框架
+- TypeScript
+- Python（网站数据抓取）
 
 ## License
 
-Note that for some entities a company license is needed. [Read the terms here](https://github.com/remotion-dev/remotion/blob/main/LICENSE.md).
+MIT
